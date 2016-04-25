@@ -31,7 +31,6 @@ function randomImage(){
 }
 
 function renderImageSet() {
-  // var imageSection = document.getElementById('products');
   var image1 = document.createElement('img');
   var image2 = document.createElement('img');
   var image3 = document.createElement('img');
@@ -69,8 +68,8 @@ function handleClick(event) {
       productsArray.forEach(function(product){
         if(product.name === click.id){
           product.numberOfTimesClicked++;
-          console.log(product);
-          console.log(click.id);
+          // console.log(product);
+          // console.log(click.id);
         }
       });
       imageSection.innerHTML = null;
