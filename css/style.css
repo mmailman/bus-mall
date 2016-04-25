@@ -1,0 +1,15 @@
+section {
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    width: auto;
+    border-style: solid;
+    border-width: thin;
+    box-shadow: 10px 10px 5px #888888;
+}

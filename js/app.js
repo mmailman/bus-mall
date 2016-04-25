@@ -5,7 +5,7 @@ var productNamesArray = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bub
 
 var productPathsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 
-var totalTries = 5;
+var totalTries = 25;
 var triesCounter = 0;
 
 var imageSection = document.getElementById('products');
@@ -31,7 +31,6 @@ function randomImage(){
 }
 
 function renderImageSet() {
-  // var imageSection = document.getElementById('products');
   var image1 = document.createElement('img');
   var image2 = document.createElement('img');
   var image3 = document.createElement('img');
@@ -69,8 +68,8 @@ function handleClick(event) {
       productsArray.forEach(function(product){
         if(product.name === click.id){
           product.numberOfTimesClicked++;
-          console.log(product);
-          console.log(click.id);
+          // console.log(product);
+          // console.log(click.id);
         }
       });
       imageSection.innerHTML = null;
