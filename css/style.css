@@ -1,0 +1,9 @@
+section {
+  display:flex;
+  justify-content: space-around;
+}
+
+img {
+  height: 350px;
+  width: 350px;
+}
