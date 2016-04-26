@@ -1,6 +1,6 @@
 section {
   display:flex;
-  justify-content: space-around;;
+  justify-content: space-around;
   flex-flow: wrap row;
 }
 
@@ -12,5 +12,5 @@ img {
   border-style: solid;
   border-width: thin;
   box-shadow: 10px 10px 5px #888888;
-  object-fit: scale-down;;
+  object-fit: scale-down;
 }
