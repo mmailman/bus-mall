@@ -5,7 +5,7 @@ var productNamesArray = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bub
 
 var productPathsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 
-var totalTries = 5;
+var totalTries = 25;
 var triesCounter = 0;
 
 var imageSection = document.getElementById('products');
@@ -72,6 +72,7 @@ function renderChart(){
   var labels = [];
   var numTimesClicked = [];
   var numTimesDisplayed = [];
+  ctx.hidden = false;
   for(var product = 0; product < productsArray.length; product++){
     labels.push(productsArray[product].name);
     numTimesClicked.push(productsArray[product].numberOfTimesClicked);
@@ -97,8 +98,10 @@ function renderChart(){
       responsive: false,
       scales: {
         yAxes: [{
+          type: 'linear',
           ticks: {
-            beginAtZero:true
+            beginAtZero:true,
+            stepSize: 1
           }
         }]
       }

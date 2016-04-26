@@ -1,6 +1,6 @@
 section {
   display:flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-flow: wrap row;
   margin-bottom: 50px;
 }
@@ -14,10 +14,19 @@ img {
   border-width: thin;
   box-shadow: 10px 10px 5px #888888;
   object-fit: scale-down;
+  margin: 15px;
 }
 
 canvas {
-    margin: 50px, 0, 0, 0 auto;
+  margin: 50px, 0, 0, 0 auto;
+  border-style: solid;
+  border-width: thin;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  margin: 15px;
 }
 
 .results {
