@@ -19,7 +19,7 @@ function Product(name, pictureFilePath){
   productsArray.push(this);
 }
 
-function buildArray(productsArray){
+function buildArray(){
   for(var i = 0; i < productNamesArray.length; i++){
     var product = new Product(productNamesArray[i], 'imgs/' + productPathsArray[i]);
   }
@@ -79,7 +79,7 @@ function handleClick(event) {
   }
 }
 //Code execution
-buildArray(productsArray);
+buildArray();
 console.log('Products Array: ' + productsArray);
 
 renderImageSet();
