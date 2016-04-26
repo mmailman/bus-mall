@@ -5,7 +5,7 @@ var productNamesArray = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bub
 
 var productPathsArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 
-var totalTries = 25;
+var totalTries = 5;
 var triesCounter = 0;
 
 var imageSection = document.getElementById('products');
@@ -60,6 +60,52 @@ function renderImageSet() {
   imageSection.appendChild(image3);
 }
 
+function showButtons(){
+  var resultsButton = document.getElementById('results-button');
+  var moreTriesButton = document.getElementById('more-tries-button');
+  moreTriesButton.hidden = false;
+  resultsButton.hidden = false;
+}
+
+function renderChart(){
+  var ctx = document.getElementById('results-chart');
+  var labels = [];
+  var numTimesClicked = [];
+  var numTimesDisplayed = [];
+  for(var product = 0; product < productsArray.length; product++){
+    labels.push(productsArray[product].name);
+    numTimesClicked.push(productsArray[product].numberOfTimesClicked);
+    numTimesDisplayed.push(productsArray[product].numberOfTimesDisplayed);
+  }
+  console.log(labels);
+  console.log(numTimesClicked);
+  var resultsChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '# of Clicks',
+        data: numTimesClicked,
+        backgroundColor: 'rgba(18, 4, 130,0.5)'
+      }, {
+        label: '# of Displays',
+        data: numTimesDisplayed,
+        backgroundColor: 'rgba(215, 125, 52, 0.5)'
+      }]
+    },
+    options: {
+      responsive: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+}
+
 function handleClick(event) {
   var click = event.target;
   // console.log(click);
@@ -75,7 +121,22 @@ function handleClick(event) {
       imageSection.innerHTML = null;
       renderImageSet();
       triesCounter++;
+    } else if (triesCounter >= totalTries) {
+      showButtons();
     }
+  }
+}
+
+function handleButtonClick(event) {
+  var click = event.target;
+  if(click.id === 'results-button'){
+    click.hidden = true;
+    document.getElementById('more-tries-button').hidden = true;
+    renderChart();
+  } else if(click.id === 'more-tries-button'){
+    click.hidden = true;
+    document.getElementById('results-button').hidden = true;
+    triesCounter = triesCounter - 11;
   }
 }
 //Code execution
@@ -84,3 +145,6 @@ console.log('Products Array: ' + productsArray);
 
 renderImageSet();
 imageSection.addEventListener('click', handleClick);
+// imageSection.removeEventListener('click', handleClick);
+var resultsSection = document.getElementById('results');
+resultsSection.addEventListener('click', handleButtonClick);

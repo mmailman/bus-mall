@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="lib/chartjs/chart.min.js"></script>
     <title>Bus Mall</title>
   </head>
   <body>
@@ -16,6 +17,9 @@
       <section id="products">
       </section>
       <section id="results">
+        <button id="results-button" hidden>View Results</button>
+        <button id="more-tries-button" hidden>10 More Choices</button>
+        <canvas id="results-chart" width="400" height="400"></canvas>
       </section>
     </main>
     <footer>
