@@ -1,15 +1,16 @@
 section {
   display:flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-around;;
+  flex-flow: wrap row;
 }
 
 img {
-    max-width: 300px;
-    max-height: 300px;
-    height: auto;
-    width: auto;
-    border-style: solid;
-    border-width: thin;
-    box-shadow: 10px 10px 5px #888888;
+  max-width: 300px;
+  max-height: 300px;
+  height: auto;
+  width: auto;
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 10px 10px 5px #888888;
+  object-fit: scale-down;;
 }
