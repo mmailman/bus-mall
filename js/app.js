@@ -110,6 +110,16 @@ function renderChart(){
   });
 }
 
+(function checkForLocal(){
+  if(localStorage.productsArray){
+    console.log('Local Storage of productsArray exists.');
+    productsArray = JSON.parse(localStorage.productsArray);
+  } else {
+    buildArray();
+  }
+})();
+
+//Event handlers
 function handleClick(event) {
   var click = event.target;
   // console.log(click);
@@ -122,6 +132,7 @@ function handleClick(event) {
           // console.log(click.id);
         }
       });
+      localStorage.setItem('productsArray', JSON.stringify(productsArray));
       imageSection.innerHTML = null;
       renderImageSet();
       triesCounter++;
@@ -143,8 +154,8 @@ function handleButtonClick(event) {
     triesCounter = triesCounter - 11;
   }
 }
+
 //Code execution
-buildArray();
 console.log('Products Array: ' + productsArray);
 
 renderImageSet();
