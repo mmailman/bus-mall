@@ -65,6 +65,7 @@ function showButtons(){
   var moreTriesButton = document.getElementById('more-tries-button');
   moreTriesButton.hidden = false;
   resultsButton.hidden = false;
+  triesCounter++; //incrementing this to greater than the upper limit so that the buttons don't appear after chart is shown.
 }
 
 function renderChart(){
@@ -124,7 +125,7 @@ function handleClick(event) {
       imageSection.innerHTML = null;
       renderImageSet();
       triesCounter++;
-    } else if (triesCounter >= totalTries) {
+    } else if (triesCounter === totalTries) {
       showButtons();
     }
   }
