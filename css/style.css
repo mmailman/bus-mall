@@ -1,3 +1,9 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 section {
   display:flex;
   justify-content: center;
@@ -5,7 +11,7 @@ section {
   margin-bottom: 50px;
 }
 
-img {
+section > img {
   max-width: 300px;
   max-height: 300px;
   height: auto;
@@ -33,4 +39,18 @@ button {
   display:flex;
   justify-content: center;
   flex-flow: wrap column;
+}
+
+.bus  {
+  max-width: 100px;
+  max-height: 100px;
+  height: auto;
+  width: auto;
+  object-fit: scale-down;
+  margin-right: 50px;
+}
+
+.bus:hover {
+    transform:translateX(-200%);
+    transition: all 1s;
 }
