@@ -1,7 +1,11 @@
+body {
+  background-color: #FFFCF7
+}
+
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 section {
@@ -21,6 +25,7 @@ section > img {
   box-shadow: 10px 10px 5px #888888;
   object-fit: scale-down;
   margin: 15px;
+  border-radius: 20px;
   transition: all .2s ease-in-out;
 }
 
@@ -40,6 +45,14 @@ button {
   margin: 15px;
 }
 
+p {
+  text-indent: 1.5em;
+}
+
+.instructions {
+  margin: 0 10% 0 10%;
+}
+
 .results {
   display:flex;
   justify-content: center;
@@ -56,6 +69,6 @@ button {
 }
 
 .bus:hover {
-    transform:translateX(-200%);
+    transform:translateX(-700%);
     transition: all 1s;
 }
